@@ -1,30 +1,30 @@
-# Aswathy Jayakrishnan - Portfolio
+# 👨‍💻 Aswathy Jayakrishnan - Professional Portfolio 
 
-This is the personal portfolio website of **Aswathy Jayakrishnan**, an AI Engineer & ML Specialist.
+[![Live Demo](https://img.shields.io/badge/Live-Website-blue?style=for-the-badge)](https://aswathyjk472.github.io/)
 
-## Tech Stack
+A sleek, ultra-minimalist developer portfolio built with a custom **Bento-box Grid architecture**. Designed with a pure monochrome dark mode aesthetic, it leverages highly responsive CSS Grid layouts and dynamic CSS keyframe animations to create a deeply professional impression.
 
-- **HTML5**
-- **CSS3** (Custom styling with Dark Mode support)
-- **JavaScript** (Vanilla JS for interactions)
+### 🌟 Key Features
+- **Bento Grid Architecture:** Clean, modular, widget-style content structuring that breaks away from traditional linear scrolling, distributing skills and projects onto independent tiles.
+- **Monochrome Dark Theme:** A sophisticated, pitch-black and steel-grey aesthetic specifically tailored for a high-end AI/ML engineering profile.
+- **Micro-Interactions:** Features incredibly subtle hover states, seamless Single Page Application (SPA) tab switching, and cascading entrance animations.
+- **Zero-Dependency Core:** Entirely constructed with pure Semantic HTML, Vanilla CSS, and raw Javascript — yielding instantaneous page load speeds with absolutely no heavy framework bundles.
 
-## Features
+### 🛠️ Technology Stack
+- **HTML5** (Structural Semantic Markup)
+- **Vanilla CSS3** (CSS Grid, Flexbox, Keyframes, Custom Variables)
+- **Vanilla JavaScript** (Navigation states & logic mapping)
+- **FontAwesome 6.4** (Vector Iconography)
 
-- **Responsive Design**: Works on Desktop and Mobile.
-- **Dark Mode**: Toggle between Light and Dark themes.
-- **Single Page Layout**: Smooth scrolling navigation.
-- **Project Showcase**: Grid view of projects with tags.
-- **Experience Timeline**: Visual timeline of work history.
+### 🚀 Local Deployment
+Since this portfolio operates exclusively on zero-dependency static web technologies, launching it locally requires no build steps:
+1. Clone the repository: `git clone https://github.com/aswathyjk472/aswathyjk472.github.io.git`
+2. Open the directory on your machine.
+3. Simply launch the `index.html` file into any modern web browser to view the site instantly.
 
-## Setup
+### 📬 Connect
+- **LinkedIn:** [aswathyjk472](https://www.linkedin.com/in/aswathyjk472)
+- **Email:** aswathyjayakrishnan2@gmail.com
 
-No build process required. Simply open `index.html` in your browser.
-
-## Deployment
-
-This site is designed to be hosted on **GitHub Pages**.
-
-1. Push the code to your GitHub repository.
-2. Go to **Settings > Pages**.
-3. Select `main` branch and `/` (root) folder.
-4. Save.
+---
+*Designed & engineered with modern web standards.*
