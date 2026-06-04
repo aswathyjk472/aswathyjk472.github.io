@@ -24,6 +24,11 @@
       <a href="#publications">Publications</a>
     </div>
     <a href="#contact" class="nav-contact-btn contact-trigger">Contact</a>
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
   </nav>
 
   <div class="layout">
@@ -739,6 +744,16 @@
     // SPA Dynamic Navigation Logic
     const sections = document.querySelectorAll('.page-section');
     const navLinks = document.querySelectorAll('.nav-links a');
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinksContainer = document.querySelector('.nav-links');
+
+    if (mobileMenuToggle && navLinksContainer) {
+      mobileMenuToggle.addEventListener('click', () => {
+        mobileMenuToggle.classList.toggle('active');
+        navLinksContainer.classList.toggle('active');
+        document.body.classList.toggle('mobile-menu-open');
+      });
+    }
 
     function navigateToSection(targetId) {
       const targetSection = document.getElementById(targetId);
@@ -759,6 +774,13 @@
 
       // Smooth scroll to top of the content
       window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Close mobile menu if open
+      if (mobileMenuToggle && mobileMenuToggle.classList.contains('active')) {
+        mobileMenuToggle.classList.remove('active');
+        navLinksContainer.classList.remove('active');
+        document.body.classList.remove('mobile-menu-open');
+      }
     }
 
     // Bind event listener to all internal anchors
