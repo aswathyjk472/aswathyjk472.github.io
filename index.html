@@ -73,6 +73,11 @@
             </div>
           </div>
         </div>
+        <div class="scroll-down-indicator">
+          <a href="#about" aria-label="Scroll down to About section">
+            <i class="fas fa-chevron-down"></i>
+          </a>
+        </div>
       </section>
 
       <!-- ====== ABOUT PAGE ====== -->
@@ -759,21 +764,8 @@
       const targetSection = document.getElementById(targetId);
       if (!targetSection) return;
 
-      // Toggle active sections
-      sections.forEach(s => s.classList.remove('active'));
-      targetSection.classList.add('active');
-
-      // Update navbar links active state
-      navLinks.forEach(link => {
-        if (link.getAttribute('href') === `#${targetId}`) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-
-      // Smooth scroll to top of the content
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Smooth scroll to target section
+      targetSection.scrollIntoView({ behavior: 'smooth' });
 
       // Close mobile menu if open
       if (mobileMenuToggle && mobileMenuToggle.classList.contains('active')) {
@@ -790,15 +782,69 @@
         e.preventDefault();
         const targetId = link.getAttribute('href').substring(1);
         navigateToSection(targetId);
+        // Update hash in URL
+        history.pushState(null, null, `#${targetId}`);
       }
     });
+
+    // Scrollspy using IntersectionObserver
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -50% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.getAttribute('id');
+          
+          // Add active class to section to trigger entrance animation
+          entry.target.classList.add('active');
+
+          // Update navbar links active state
+          navLinks.forEach(link => {
+            if (link.getAttribute('href') === `#${sectionId}`) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
 
     // Handle initial hash routing
     window.addEventListener('DOMContentLoaded', () => {
       const hash = window.location.hash;
       if (hash) {
         const targetId = hash.substring(1);
-        navigateToSection(targetId);
+        setTimeout(() => {
+          navigateToSection(targetId);
+        }, 100);
+      } else {
+        // Fallback: trigger animation for home section if no hash
+        const homeSection = document.getElementById('home');
+        if (homeSection) homeSection.classList.add('active');
+      }
+    });
+
+    // Disable right-click on all images
+    document.addEventListener('contextmenu', (e) => {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    });
+
+    // Disable copy, cut, paste, and image dragging
+    document.addEventListener('copy', (e) => e.preventDefault());
+    document.addEventListener('cut', (e) => e.preventDefault());
+    document.addEventListener('paste', (e) => e.preventDefault());
+    document.addEventListener('dragstart', (e) => {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
       }
     });
   </script>
