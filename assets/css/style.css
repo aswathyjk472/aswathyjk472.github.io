@@ -228,6 +228,11 @@ body.mobile-menu-open {
   height: 100%;
   z-index: 0;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.page-section.active #home-dots-canvas {
   opacity: 0.65;
 }
 
@@ -240,16 +245,16 @@ body.mobile-menu-open {
   color: rgba(168, 85, 247, 0.035);
   z-index: 0;
   pointer-events: none;
-  transform: scale(0.8) rotate(-15deg);
+  transform: translateY(30px) scale(0.8) rotate(-15deg);
   opacity: 0;
-  transition: opacity 1.8s ease, transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .page-section.active .section-bg-icon {
   opacity: 1;
-  transform: scale(1) rotate(0deg);
+  transform: translateY(0) scale(1) rotate(0deg);
   animation: floatBgIcon 12s ease-in-out infinite alternate;
-  animation-delay: 1.8s;
+  animation-delay: 1s;
 }
 
 @keyframes floatBgIcon {
@@ -1403,6 +1408,12 @@ textarea.form-control {
     width: clamp(280px, 70vw, 400px);
     height: clamp(280px, 70vw, 400px);
   }
+  .circle-bg-3 {
+    width: clamp(120px, 30vw, 200px);
+    height: clamp(120px, 30vw, 200px);
+    right: 10px;
+    top: 10px;
+  }
   
   .contact-layout {
     grid-template-columns: 1fr;
@@ -1422,6 +1433,12 @@ textarea.form-control {
   }
   .hero-container {
     grid-column: span 1;
+  }
+  .section-bg-icon {
+    font-size: clamp(150px, 45vw, 260px);
+    right: -3%;
+    bottom: -8%;
+    color: rgba(168, 85, 247, 0.08); /* Make watermark icon slightly more visible on mobile */
   }
 }
 
