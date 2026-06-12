@@ -83,15 +83,77 @@
 
       <!-- ====== ABOUT PAGE ====== -->
       <section class="page-section" id="about">
-        <!-- ABOUT -->
-        <div class="bento-card span-2">
-          <div class="title-sm"><i class="fas fa-user"></i> About Me</div>
-          <div class="about-text" style="display: flex; flex-direction: column; gap: 12px;">
-            <p><strong>AI Engineer</strong> and <strong>M.Tech scholar</strong> specializing in Computer Vision and NLP,
-              focused on transforming deep learning research into real-world applications.</p>
-            <p>Developed advanced full stack AI integrated projects.</p>
-            <p>Currently building full-stack AI-integrated applications at Mastermine Technologies (Electron.js,
-              React.js, Java).</p>
+        <!-- LEFT COLUMN: RESEARCH INTERESTS & CAREER VISION -->
+        <div class="about-left-col">
+
+          <!-- Research Interests Card with animated scrolling tag list -->
+          <div class="bento-card research-interests-card">
+            <div class="title-sm"><i class="fas fa-microscope"></i> Research Interests</div>
+            <div class="ticker-wrap">
+              <div class="ticker-content">
+                <div class="ticker-item"><i class="fas fa-atom"></i> Artificial Intelligence & ML</div>
+                <div class="ticker-item"><i class="fas fa-eye"></i> Computer Vision & Medical Imaging</div>
+                <div class="ticker-item"><i class="fas fa-brain"></i> Explainable AI (XAI)</div>
+                <div class="ticker-item"><i class="fas fa-network-wired"></i> Deep Learning & Transformers</div>
+                <div class="ticker-item"><i class="fas fa-language"></i> Natural Language Processing</div>
+                <div class="ticker-item"><i class="fas fa-project-diagram"></i> Multimodal AI Systems</div>
+                <div class="ticker-item"><i class="fas fa-heartbeat"></i> Healthcare & Diagnostics AI</div>
+                <div class="ticker-item"><i class="fas fa-shield-alt"></i> Uncertainty-Aware Learning</div>
+                <div class="ticker-item"><i class="fas fa-users-cog"></i> Human-Centered AI</div>
+
+                <!-- Duplicate for seamless scrolling -->
+                <div class="ticker-item"><i class="fas fa-atom"></i> Artificial Intelligence & ML</div>
+                <div class="ticker-item"><i class="fas fa-eye"></i> Computer Vision & Medical Imaging</div>
+                <div class="ticker-item"><i class="fas fa-brain"></i> Explainable AI (XAI)</div>
+                <div class="ticker-item"><i class="fas fa-network-wired"></i> Deep Learning & Transformers</div>
+                <div class="ticker-item"><i class="fas fa-language"></i> Natural Language Processing</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Career Vision Card with smooth slide/fade animations -->
+          <div class="bento-card career-vision-card">
+            <div class="title-sm"><i class="fas fa-road"></i> Career Vision</div>
+            <div class="vision-slider">
+              <div class="vision-slide active">
+                <p style="margin-bottom: 10px;"><strong>Goal:</strong> Contribute to impactful AI research while
+                  fostering innovation through teaching and collaboration.</p>
+                <p>Eager to explore new academic partnerships and publications.</p>
+              </div>
+              <div class="vision-slide">
+                <p style="margin-bottom: 10px;"><strong>Active Search:</strong> Actively seeking opportunities in
+                  Research Engineering, AI Research, Doctoral Studies, and Assistant Professor roles.</p>
+                <p>Ready to contribute to cutting-edge research teams.</p>
+              </div>
+              <div class="vision-slide">
+                <p style="margin-bottom: 10px;"><strong>Mentorship:</strong> Dedicated to advancing AI technologies and
+                  mentoring future computer science innovators.</p>
+                <p>Believer in human-centered AI and knowledge sharing.</p>
+              </div>
+            </div>
+            <div class="vision-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: ABOUT ME -->
+        <div class="about-right-col">
+          <div class="bento-card">
+            <div class="title-sm"><i class="fas fa-user"></i> About Me</div>
+            <div class="about-text" style="display: flex; flex-direction: column; gap: 14px;">
+              <p>Hello! I'm <strong>Aswathy Jayakrishnan</strong>, an AI Research Engineer and M.Tech graduate
+                specializing in Artificial Intelligence and Machine Learning. I am passionate about developing
+                intelligent systems that transform cutting-edge research into practical solutions capable of solving
+                real-world challenges.</p>
+              <p>My primary research interests lie in <strong>Computer Vision, Medical AI, Deep Learning, Explainable AI
+                  (XAI), Natural Language Processing, and Multimodal Learning</strong>. I love exploring how advanced AI
+                models can be made more accurate, reliable, interpretable, and accessible for high-impact domains such
+                as healthcare, security, and education.</p>
+            </div>
           </div>
         </div>
 
@@ -264,7 +326,8 @@
             </div>
           </div>
         </div>
-        <div class="section-bg-icon" style="display: flex; gap: 2vw; align-items: baseline;"><i class="fas fa-laptop-code"></i><i class="fas fa-user-tie" style="font-size: 0.6em;"></i></div>
+        <div class="section-bg-icon" style="display: flex; gap: 2vw; align-items: baseline;"><i
+            class="fas fa-laptop-code"></i><i class="fas fa-user-tie" style="font-size: 0.6em;"></i></div>
       </section>
 
       <!-- ====== CERTIFICATIONS PAGE ====== -->
@@ -425,7 +488,8 @@
                 <a href="#" style="display: inline-flex; align-items: center; gap: 8px;">
                   Health Mind AI <i class="fas fa-external-link-alt" style="font-size: 13px;"></i>
                 </a>
-                <span style="font-size: 13px; color: var(--accent-2); font-weight: 500;">Nov 2025 - Present &bull; In Progress Work</span>
+                <span style="font-size: 13px; color: var(--accent-2); font-weight: 500;">Nov 2025 - Present &bull; In
+                  Progress Work</span>
               </div>
               <!-- Progress Bar -->
               <div class="proj-progress-container" style="margin-top: 15px; max-width: 280px; margin-bottom: 5px;">
@@ -482,8 +546,10 @@
             <div>
               <div class="proj-cat">Research Project</div>
               <div class="proj-title" style="display: flex; align-items: baseline; gap: 15px; flex-wrap: wrap;">
-                <a href="https://github.com/aswathyjk472/Diabetic-Retinopathy-Hybrid-Model" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;">
-                  Ensembled Model for Explainable Diabetic Retinopathy Detection <i class="fas fa-external-link-alt" style="font-size: 13px;"></i>
+                <a href="https://github.com/aswathyjk472/Diabetic-Retinopathy-Hybrid-Model" target="_blank"
+                  style="display: inline-flex; align-items: center; gap: 8px;">
+                  Ensembled Model for Explainable Diabetic Retinopathy Detection <i class="fas fa-external-link-alt"
+                    style="font-size: 13px;"></i>
                 </a>
                 <span style="font-size: 13px; color: var(--accent-2); font-weight: 500;">Jan 2026 - May 2026</span>
               </div>
@@ -540,7 +606,8 @@
             <div>
               <div class="proj-cat">NLP</div>
               <div class="proj-title">
-                <a href="https://github.com/aswathyjk472/VideoQuest" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;">
+                <a href="https://github.com/aswathyjk472/VideoQuest" target="_blank"
+                  style="display: inline-flex; align-items: center; gap: 8px;">
                   VideoQuest: A QA System for YouTube <i class="fas fa-external-link-alt" style="font-size: 13px;"></i>
                 </a>
               </div>
@@ -579,7 +646,8 @@
             <div>
               <div class="proj-cat">Computer Vision</div>
               <div class="proj-title">
-                <a href="https://github.com/aswathyjk472/People-Counting-System" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;">
+                <a href="https://github.com/aswathyjk472/People-Counting-System" target="_blank"
+                  style="display: inline-flex; align-items: center; gap: 8px;">
                   People Counting & Tracking System <i class="fas fa-external-link-alt" style="font-size: 13px;"></i>
                 </a>
               </div>
@@ -621,7 +689,8 @@
             <div>
               <div class="proj-cat">Computer Vision</div>
               <div class="proj-title">
-                <a href="https://github.com/aswathyjk472/Occlusion-based-FER" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;">
+                <a href="https://github.com/aswathyjk472/Occlusion-based-FER" target="_blank"
+                  style="display: inline-flex; align-items: center; gap: 8px;">
                   Express AI <i class="fas fa-external-link-alt" style="font-size: 13px;"></i>
                 </a>
               </div>
@@ -831,6 +900,51 @@
         if (homeSection) homeSection.classList.add('active');
       }
     });
+
+    // Career Vision Slider
+    const slides = document.querySelectorAll('.vision-slide');
+    const dots = document.querySelectorAll('.vision-dots .dot');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+      if (slides.length === 0) return;
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      if (dots[currentSlide]) {
+        dots[currentSlide].classList.add('active');
+      }
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function startSlideShow() {
+      stopSlideShow();
+      slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopSlideShow() {
+      if (slideInterval) {
+        clearInterval(slideInterval);
+      }
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        showSlide(index);
+        startSlideShow(); // Reset interval on manual click
+      });
+    });
+
+    // Initialize slideshow
+    if (slides.length > 0) {
+      startSlideShow();
+    }
 
     // Connection Dots Particle Animation
     const canvas = document.getElementById('home-dots-canvas');
