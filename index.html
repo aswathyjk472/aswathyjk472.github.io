@@ -78,6 +78,7 @@
             <i class="fas fa-chevron-down"></i>
           </a>
         </div>
+        <canvas id="home-dots-canvas"></canvas>
       </section>
 
       <!-- ====== ABOUT PAGE ====== -->
@@ -168,6 +169,7 @@
             <div class="skill-chip">Time Management</div>
           </div>
         </div>
+        <div class="section-bg-icon"><i class="fas fa-fingerprint"></i></div>
       </section>
 
       <!-- ====== EDUCATION PAGE ====== -->
@@ -199,6 +201,7 @@
             </div>
           </div>
         </div>
+        <div class="section-bg-icon"><i class="fas fa-graduation-cap"></i></div>
       </section>
 
       <!-- ====== EXPERIENCE PAGE ====== -->
@@ -261,6 +264,7 @@
             </div>
           </div>
         </div>
+        <div class="section-bg-icon" style="display: flex; gap: 2vw; align-items: baseline;"><i class="fas fa-laptop-code"></i><i class="fas fa-user-tie" style="font-size: 0.6em;"></i></div>
       </section>
 
       <!-- ====== CERTIFICATIONS PAGE ====== -->
@@ -400,7 +404,7 @@
           </div>
 
         </div>
-
+        <div class="section-bg-icon"><i class="fas fa-award"></i></div>
       </section>
 
       <!-- ====== PROJECTS PAGE ====== -->
@@ -408,24 +412,31 @@
         <!-- PROJECTS HEADER -->
         <div class="bento-card span-2"
           style="padding: 20px 30px; display: flex; align-items: center; justify-content: space-between;">
-          <div class="title-sm" style="margin: 0;"><i class="fas fa-code"></i> Featured Projects</div>
+          <div class="title-sm" style="margin: 0;"><i class="fas fa-code"></i> Projects</div>
           <div style="color: var(--accent-1);"><i class="fas fa-arrow-down"></i></div>
         </div>
 
         <!-- PROJECT 1 -->
-        <a href="#" class="bento-card span-2" style="text-decoration:none;">
+        <div class="bento-card span-2">
           <div class="project-card">
-            <div class="proj-img" style="height: 200px;">
-              <div class="placeholder-graphic"
-                style="background: linear-gradient(45deg, #000000, #0a0a0a); color: #1a1a1a; font-size: 3rem;">HEALTH
-                MIND AI</div>
-              <i class="fas fa-external-link-alt proj-icon"></i>
-            </div>
             <div>
-              <div class="proj-cat">Deep Learning & Healthcare Tech</div>
-              <div class="proj-title" style="display: flex; align-items: baseline; gap: 15px;">
-                Health Mind AI
-                <span style="font-size: 13px; color: var(--accent-2); font-weight: 500;">Nov 2025 - Present</span>
+              <div class="proj-cat">Production App Development</div>
+              <div class="proj-title" style="display: flex; align-items: baseline; gap: 15px; flex-wrap: wrap;">
+                <a href="#" style="display: inline-flex; align-items: center; gap: 8px;">
+                  Health Mind AI <i class="fas fa-external-link-alt" style="font-size: 13px;"></i>
+                </a>
+                <span style="font-size: 13px; color: var(--accent-2); font-weight: 500;">Nov 2025 - Present &bull; In Progress Work</span>
+              </div>
+              <!-- Progress Bar -->
+              <div class="proj-progress-container" style="margin-top: 15px; max-width: 280px; margin-bottom: 5px;">
+                <div
+                  style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); margin-bottom: 5px;">
+                  <span>Development Progress</span>
+                  <span style="font-weight: 600; color: var(--accent-1);">50%</span>
+                </div>
+                <div class="proj-progress-bar">
+                  <div class="proj-progress-fill"></div>
+                </div>
               </div>
             </div>
             <div class="proj-desc"
@@ -463,22 +474,17 @@
               </div>
             </div>
           </div>
-        </a>
+        </div>
 
         <!-- PROJECT 2 (DR Detection) -->
-        <a href="https://github.com/aswathyjk472/Diabetic-Retinopathy-Hybrid-Model" target="_blank"
-          class="bento-card span-2" style="text-decoration:none;">
+        <div class="bento-card span-2">
           <div class="project-card">
-            <div class="proj-img" style="height: 200px;">
-              <div class="placeholder-graphic"
-                style="background: linear-gradient(45deg, #0a0a0c, #16161a); color: #2a2a30; font-size: 3rem;">EYE
-                DIAGNOSTICS AI</div>
-              <i class="fas fa-external-link-alt proj-icon"></i>
-            </div>
             <div>
-              <div class="proj-cat">Deep Learning & Healthcare Tech</div>
-              <div class="proj-title" style="display: flex; align-items: baseline; gap: 15px;">
-                Evidential Hybrid DR Diagnostics
+              <div class="proj-cat">Research Project</div>
+              <div class="proj-title" style="display: flex; align-items: baseline; gap: 15px; flex-wrap: wrap;">
+                <a href="https://github.com/aswathyjk472/Diabetic-Retinopathy-Hybrid-Model" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;">
+                  Ensembled Model for Explainable Diabetic Retinopathy Detection <i class="fas fa-external-link-alt" style="font-size: 13px;"></i>
+                </a>
                 <span style="font-size: 13px; color: var(--accent-2); font-weight: 500;">Jan 2026 - May 2026</span>
               </div>
             </div>
@@ -526,21 +532,18 @@
               </div>
             </div>
           </div>
-        </a>
+        </div>
 
         <!-- PROJECT 3 -->
-        <a href="https://github.com/aswathyjk472/VideoQuest" target="_blank" class="bento-card span-2"
-          style="text-decoration:none;">
+        <div class="bento-card span-2">
           <div class="project-card">
-            <div class="proj-img" style="height: 200px;">
-              <div class="placeholder-graphic"
-                style="background: linear-gradient(45deg, #020202, #080808); color: #222222; font-size: 3rem;">
-                VIDEOQUEST</div>
-              <i class="fas fa-external-link-alt proj-icon"></i>
-            </div>
             <div>
               <div class="proj-cat">NLP</div>
-              <div class="proj-title">VideoQuest: A QA System for YouTube</div>
+              <div class="proj-title">
+                <a href="https://github.com/aswathyjk472/VideoQuest" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;">
+                  VideoQuest: A QA System for YouTube <i class="fas fa-external-link-alt" style="font-size: 13px;"></i>
+                </a>
+              </div>
             </div>
             <div class="proj-desc"
               style="-webkit-line-clamp: unset; line-clamp: unset; display: block; overflow: visible;">
@@ -568,20 +571,18 @@
               </div>
             </div>
           </div>
-        </a>
+        </div>
 
         <!-- PROJECT 4 -->
-        <a href="https://github.com/aswathyjk472/People-Counting-System" target="_blank" class="bento-card span-2"
-          style="text-decoration:none;">
+        <div class="bento-card span-2">
           <div class="project-card">
-            <div class="proj-img" style="height: 200px;">
-              <div class="placeholder-graphic" style="background: #000000; color: #111111; font-size: 3rem;">TRACKING AI
-              </div>
-              <i class="fas fa-external-link-alt proj-icon"></i>
-            </div>
             <div>
               <div class="proj-cat">Computer Vision</div>
-              <div class="proj-title">People Counting & Tracking System</div>
+              <div class="proj-title">
+                <a href="https://github.com/aswathyjk472/People-Counting-System" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;">
+                  People Counting & Tracking System <i class="fas fa-external-link-alt" style="font-size: 13px;"></i>
+                </a>
+              </div>
             </div>
             <div class="proj-desc"
               style="-webkit-line-clamp: unset; line-clamp: unset; display: block; overflow: visible;">
@@ -612,21 +613,18 @@
               </div>
             </div>
           </div>
-        </a>
+        </div>
 
         <!-- PROJECT 5 (Express AI) -->
-        <a href="https://github.com/aswathyjk472/Occlusion-based-FER" target="_blank" class="bento-card span-2"
-          style="text-decoration:none;">
+        <div class="bento-card span-2">
           <div class="project-card">
-            <div class="proj-img" style="height: 200px;">
-              <div class="placeholder-graphic"
-                style="background: linear-gradient(45deg, #050505, #000000); color: #151515; font-size: 3rem;">EXPRESS
-                AI</div>
-              <i class="fas fa-external-link-alt proj-icon"></i>
-            </div>
             <div>
               <div class="proj-cat">Computer Vision</div>
-              <div class="proj-title">Express AI</div>
+              <div class="proj-title">
+                <a href="https://github.com/aswathyjk472/Occlusion-based-FER" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;">
+                  Express AI <i class="fas fa-external-link-alt" style="font-size: 13px;"></i>
+                </a>
+              </div>
             </div>
             <div class="proj-desc"
               style="-webkit-line-clamp: unset; line-clamp: unset; display: block; overflow: visible;">
@@ -659,7 +657,8 @@
               </div>
             </div>
           </div>
-        </a>
+        </div>
+        <div class="section-bg-icon"><i class="fas fa-cubes"></i></div>
       </section>
 
       <!-- ====== PUBLICATIONS PAGE ====== -->
@@ -684,6 +683,7 @@
             </div>
           </div>
         </div>
+        <div class="section-bg-icon"><i class="fas fa-book-open"></i></div>
       </section>
 
       <!-- ====== CONTACT PAGE ====== -->
@@ -740,6 +740,7 @@
             </form>
           </div>
         </div>
+        <div class="section-bg-icon"><i class="fas fa-paper-plane"></i></div>
       </section>
 
     </main>
@@ -798,7 +799,7 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const sectionId = entry.target.getAttribute('id');
-          
+
           // Add active class to section to trigger entrance animation
           entry.target.classList.add('active');
 
@@ -830,6 +831,87 @@
         if (homeSection) homeSection.classList.add('active');
       }
     });
+
+    // Connection Dots Particle Animation
+    const canvas = document.getElementById('home-dots-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      const particleCount = 45;
+      const connectionDistance = 110;
+
+      function resizeCanvas() {
+        const homeSection = document.getElementById('home');
+        if (homeSection && canvas) {
+          canvas.width = homeSection.clientWidth;
+          canvas.height = homeSection.clientHeight;
+        }
+      }
+
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.vx = (Math.random() - 0.5) * 0.7;
+          this.vy = (Math.random() - 0.5) * 0.7;
+          this.radius = Math.random() * 2 + 1;
+          this.color = Math.random() > 0.55 ? 'rgba(168, 85, 247, 0.45)' : 'rgba(245, 243, 255, 0.45)'; // Violet and White
+        }
+
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+
+          if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+          if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        }
+
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        }
+      }
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach(p => {
+          p.update();
+          p.draw();
+        });
+
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < connectionDistance) {
+              const alpha = (1 - dist / connectionDistance) * 0.16;
+              ctx.strokeStyle = `rgba(168, 85, 247, ${alpha})`;
+              ctx.lineWidth = 0.8;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
 
     // Disable right-click on all images
     document.addEventListener('contextmenu', (e) => {
