@@ -38,7 +38,7 @@ html {
 }
 
 body {
-  background: var(--bg-dark);
+  background: transparent;
   color: var(--text-main);
   overflow-x: hidden;
   line-height: 1.6;
@@ -220,20 +220,15 @@ body.mobile-menu-open {
 }
 
 /* Background canvas for connected dots */
-#home-dots-canvas {
-  position: absolute;
+#portfolio-dots-canvas {
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.page-section.active #home-dots-canvas {
-  opacity: 0.65;
+  opacity: 0.5;
 }
 
 /* Themed Floating Background Icons */

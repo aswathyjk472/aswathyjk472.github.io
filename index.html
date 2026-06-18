@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  <canvas id="portfolio-dots-canvas"></canvas>
 
 
   <nav class="top-nav">
@@ -78,7 +79,6 @@
             <i class="fas fa-chevron-down"></i>
           </a>
         </div>
-        <canvas id="home-dots-canvas"></canvas>
       </section>
 
       <!-- ====== ABOUT PAGE ====== -->
@@ -145,14 +145,8 @@
           <div class="bento-card">
             <div class="title-sm"><i class="fas fa-user"></i> About Me</div>
             <div class="about-text" style="display: flex; flex-direction: column; gap: 14px;">
-              <p>Hello! I'm <strong>Aswathy Jayakrishnan</strong>, an AI Research Engineer and M.Tech graduate
-                specializing in Artificial Intelligence and Machine Learning. I am passionate about developing
-                intelligent systems that transform cutting-edge research into practical solutions capable of solving
-                real-world challenges.</p>
-              <p>My primary research interests lie in <strong>Computer Vision, Medical AI, Deep Learning, Explainable AI
-                  (XAI), Natural Language Processing, and Multimodal Learning</strong>. I love exploring how advanced AI
-                models can be made more accurate, reliable, interpretable, and accessible for high-impact domains such
-                as healthcare, security, and education.</p>
+              <p>I am <strong>Aswathy Jayakrishnan</strong>, an Assistant Professor and AI Research Engineer specializing in Artificial Intelligence, Machine Learning, Computer Vision, Medical AI, and Natural Language Processing. My work focuses on developing intelligent systems that bridge cutting-edge research and real-world applications, with an emphasis on explainable, trustworthy, and deployable AI solutions.</p>
+              <p>Currently, I serve as an Assistant Professor at Adi Shankara Institute of Engineering and Technology, where I teach Computer Networks and Artificial Intelligence Laboratory courses while mentoring future engineers. My research includes Diabetic Retinopathy grading using hybrid deep learning frameworks, Facial Expression Recognition, NLP-based Question Answering systems, and Healthcare AI. I am passionate about advancing AI through research, innovation, teaching, and academic collaboration.</p>
             </div>
           </div>
         </div>
@@ -271,6 +265,14 @@
         <!-- EXPERIENCE -->
         <div class="bento-card span-2">
           <div class="title-sm"><i class="fas fa-briefcase"></i> Experience</div>
+          <div class="timeline-item">
+            <div class="tl-date">Jun 2026 - Present</div>
+            <div class="tl-title">Assistant Professor (AI & ML)</div>
+            <div class="tl-desc">
+              <p style="margin-top: 4px; color: var(--accent-1); font-weight: 600; margin-bottom: 8px;">Adi Shankara Institute of Engineering and Technology</p>
+              <p>Teaching Computer Networks (Theory & Laboratory) and Artificial Intelligence Laboratory courses while mentoring undergraduate students in AI and computing. Actively involved in academic instruction, laboratory development, student guidance, and research activities in Artificial Intelligence, Machine Learning, and Computer Vision.</p>
+            </div>
+          </div>
           <div class="timeline-item">
             <div class="tl-date">Aug 2025 - May 2026</div>
             <div class="tl-title">Intern - Mastermine Technologies</div>
@@ -947,18 +949,17 @@
     }
 
     // Connection Dots Particle Animation
-    const canvas = document.getElementById('home-dots-canvas');
+    const canvas = document.getElementById('portfolio-dots-canvas');
     if (canvas) {
       const ctx = canvas.getContext('2d');
       let particles = [];
-      const particleCount = 45;
+      const particleCount = 85;
       const connectionDistance = 110;
 
       function resizeCanvas() {
-        const homeSection = document.getElementById('home');
-        if (homeSection && canvas) {
-          canvas.width = homeSection.clientWidth;
-          canvas.height = homeSection.clientHeight;
+        if (canvas) {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
         }
       }
 
