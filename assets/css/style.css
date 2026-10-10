@@ -847,9 +847,9 @@ body.mobile-menu-open {
 
 /* Contact Grid & Form Layout */
 .contact-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   margin-top: 20px;
 }
 
@@ -927,8 +927,8 @@ body.mobile-menu-open {
 /* Form Styles */
 .contact-form-panel {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  width: 100%;
+  margin-top: 8px;
 }
 
 .form-group {
@@ -964,6 +964,9 @@ textarea.form-control {
 
 .btn-submit {
   width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--accent-solid);
   color: var(--accent-contrast);
   font-weight: 700;
@@ -974,6 +977,7 @@ textarea.form-control {
   cursor: pointer;
   border: 1px solid var(--accent-solid);
   font-size: 14px;
+  text-decoration: none;
   transition: var(--transition-smooth);
 }
 
