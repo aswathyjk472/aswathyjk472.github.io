@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Certifications | Aswathy Jayakrishnan</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .cert-page-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .cert-header-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 35px;
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .cert-header-card::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cert-header-titles h1 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      color: var(--text-main);
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cert-header-titles h1 i {
+      color: var(--accent-solid);
+    }
+
+    .cert-header-titles p {
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+
+    .cert-nav-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .cert-action-btn {
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      border: 1px solid var(--border-color);
+      transition: var(--transition-smooth);
+    }
+
+    .cert-action-btn.back-btn {
+      background: rgba(168, 85, 247, 0.12);
+      color: var(--text-main);
+      border-color: var(--accent-solid);
+    }
+
+    .cert-action-btn.back-btn:hover {
+      background: var(--accent-solid);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
+    }
+
+    .cert-action-btn.close-btn {
+      background: transparent;
+      color: var(--text-muted);
+    }
+
+    .cert-action-btn.close-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+      border-color: var(--border-hover);
+    }
+
+    /* Vertical stack list: one below the other, NO side by side */
+    .cert-vertical-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      width: 100%;
+    }
+
+    .cert-single-row {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .cert-single-row:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      background: var(--bg-card-hover);
+    }
+
+    .cert-row-badge {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 14px;
+      background: rgba(168, 85, 247, 0.12);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-solid);
+      font-size: 20px;
+    }
+
+    .cert-single-row:hover .cert-row-badge {
+      background: var(--accent-solid);
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .cert-row-body {
+      flex: 1;
+    }
+
+    .cert-row-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .cert-title-text {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .cert-issuer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13.5px;
+      color: var(--accent-1);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .cert-category-tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--accent-glass);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .cert-date-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .cert-view-doc-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--accent-1);
+      text-decoration: none;
+      margin-top: 6px;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+    }
+
+    .cert-view-doc-btn:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .cert-page-wrapper {
+        padding: 24px 16px 60px;
+      }
+      .cert-single-row {
+        flex-direction: column;
+        padding: 20px;
+        gap: 14px;
+      }
+      .cert-row-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="portfolio-dots-canvas"></canvas>
+
+  <div class="cert-page-wrapper">
+    <!-- Header -->
+    <header class="cert-header-card">
+      <div class="cert-header-titles">
+        <h1><i class="fas fa-award"></i> All Certifications</h1>
+        <p>Complete credentials and certified learning listed in order, one below the other.</p>
+      </div>
+      <div class="cert-nav-actions">
+        <a href="index.html#certifications" class="cert-action-btn back-btn">
+          <i class="fas fa-arrow-left"></i> Return to Portfolio
+        </a>
+        <button type="button" onclick="window.close()" class="cert-action-btn close-btn" title="Close this window">
+          <i class="fas fa-times"></i> Close Window
+        </button>
+      </div>
+    </header>
+
+    <!-- Vertical List of all certifications (One below the other, No side-by-side) -->
+    <main class="cert-vertical-stack">
+
+      <!-- Item 1: NPTEL LLM -->
+      <article class="cert-single-row">
+        <div class="cert-row-badge">
+          <i class="fas fa-brain"></i>
+        </div>
+        <div class="cert-row-body">
+          <div class="cert-row-header">
+            <h2 class="cert-title-text">Introduction to Large Language Models</h2>
+            <span class="cert-date-text">Jul 2025</span>
+          </div>
+          <div class="cert-issuer-badge">
+            <i class="fas fa-university"></i> NPTEL
+          </div>
+          <div>
+            <span class="cert-category-tag">Generative AI & LLMs</span>
+          </div>
+          <div style="margin-top: 6px;">
+            <a href="assets/nptel_certificate.pdf" target="_blank" class="cert-view-doc-btn">
+              <i class="fas fa-file-pdf"></i> View Certificate PDF <i class="fas fa-external-link-alt" style="font-size: 10px;"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 2: Coursera LLM -->
+      <article class="cert-single-row">
+        <div class="cert-row-badge">
+          <i class="fas fa-brain"></i>
+        </div>
+        <div class="cert-row-body">
+          <div class="cert-row-header">
+            <h2 class="cert-title-text">Introduction to Large Language Models</h2>
+            <span class="cert-date-text">Apr 2025</span>
+          </div>
+          <div class="cert-issuer-badge">
+            <i class="fas fa-certificate"></i> Coursera
+          </div>
+          <div>
+            <span class="cert-category-tag">Generative AI & LLMs</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 3: Coursera GenAI UX -->
+      <article class="cert-single-row">
+        <div class="cert-row-badge">
+          <i class="fas fa-palette"></i>
+        </div>
+        <div class="cert-row-body">
+          <div class="cert-row-header">
+            <h2 class="cert-title-text">Generative AI for UX Designers</h2>
+            <span class="cert-date-text">Apr 2025</span>
+          </div>
+          <div class="cert-issuer-badge">
+            <i class="fas fa-certificate"></i> Coursera
+          </div>
+          <div>
+            <span class="cert-category-tag">Generative AI & LLMs</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 4: Google Cloud GenAI -->
+      <article class="cert-single-row">
+        <div class="cert-row-badge">
+          <i class="fab fa-google"></i>
+        </div>
+        <div class="cert-row-body">
+          <div class="cert-row-header">
+            <h2 class="cert-title-text">Intro to Generative AI Learning Path</h2>
+            <span class="cert-date-text">Apr 2025</span>
+          </div>
+          <div class="cert-issuer-badge">
+            <i class="fab fa-google"></i> Google Cloud
+          </div>
+          <div>
+            <span class="cert-category-tag">Generative AI & LLMs</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 5: Infosys Prompt Engineering -->
+      <article class="cert-single-row">
+        <div class="cert-row-badge">
+          <i class="fas fa-terminal"></i>
+        </div>
+        <div class="cert-row-body">
+          <div class="cert-row-header">
+            <h2 class="cert-title-text">Prompt Engineering</h2>
+            <span class="cert-date-text">Apr 2025</span>
+          </div>
+          <div class="cert-issuer-badge">
+            <i class="fas fa-laptop-code"></i> Infosys Springboard
+          </div>
+          <div>
+            <span class="cert-category-tag">Generative AI & LLMs</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 6: LCC Python/AI -->
+      <article class="cert-single-row">
+        <div class="cert-row-badge">
+          <i class="fab fa-python"></i>
+        </div>
+        <div class="cert-row-body">
+          <div class="cert-row-header">
+            <h2 class="cert-title-text">Training & Internship in Python/AI</h2>
+            <span class="cert-date-text">Jun 2022</span>
+          </div>
+          <div class="cert-issuer-badge">
+            <i class="fas fa-graduation-cap"></i> LCC Computer Education
+          </div>
+          <div>
+            <span class="cert-category-tag">AI/ML & Python Foundations</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 7: HCL GUVI Python -->
+      <article class="cert-single-row">
+        <div class="cert-row-badge">
+          <i class="fab fa-python"></i>
+        </div>
+        <div class="cert-row-body">
+          <div class="cert-row-header">
+            <h2 class="cert-title-text">Introduction to Python</h2>
+            <span class="cert-date-text">Verified</span>
+          </div>
+          <div class="cert-issuer-badge">
+            <i class="fas fa-code"></i> HCL GUVI
+          </div>
+          <div>
+            <span class="cert-category-tag">AI/ML & Python Foundations</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 8: DevTown Python & Cyber -->
+      <article class="cert-single-row">
+        <div class="cert-row-badge">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="cert-row-body">
+          <div class="cert-row-header">
+            <h2 class="cert-title-text">Introduction to Python & Cybersecurity</h2>
+            <span class="cert-date-text">Verified</span>
+          </div>
+          <div class="cert-issuer-badge">
+            <i class="fas fa-code"></i> DevTown
+          </div>
+          <div>
+            <span class="cert-category-tag">AI/ML & Python Foundations</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Item 9: Excel Coursera -->
+      <article class="cert-single-row">
+        <div class="cert-row-badge">
+          <i class="fas fa-file-excel"></i>
+        </div>
+        <div class="cert-row-body">
+          <div class="cert-row-header">
+            <h2 class="cert-title-text">Introduction to Microsoft Excel</h2>
+            <span class="cert-date-text">Dec 2024</span>
+          </div>
+          <div class="cert-issuer-badge">
+            <i class="fas fa-toolbox"></i> Coursera Project Network
+          </div>
+          <div>
+            <span class="cert-category-tag">Tools & Productivity</span>
+          </div>
+        </div>
+      </article>
+
+    </main>
+  </div>
+
+  <script>
+    // Connection Dots Particle Animation
+    const canvas = document.getElementById('portfolio-dots-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      const particleCount = 60;
+      const connectionDistance = 110;
+
+      function resizeCanvas() {
+        if (canvas) {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+      }
+
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.vx = (Math.random() - 0.5) * 0.7;
+          this.vy = (Math.random() - 0.5) * 0.7;
+          this.radius = Math.random() * 2 + 1;
+          this.color = Math.random() > 0.55 ? 'rgba(168, 85, 247, 0.45)' : 'rgba(245, 243, 255, 0.45)';
+        }
+
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+          if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        }
+
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        }
+      }
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+          p.update();
+          p.draw();
+        });
+
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < connectionDistance) {
+              const alpha = (1 - dist / connectionDistance) * 0.16;
+              ctx.strokeStyle = `rgba(168, 85, 247, ${alpha})`;
+              ctx.lineWidth = 0.8;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(animate);
+      }
+      animate();
+    }
+  </script>
+</body>
+
+</html>
