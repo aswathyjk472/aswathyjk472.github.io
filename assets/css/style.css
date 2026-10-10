@@ -1373,6 +1373,18 @@ textarea.form-control {
     padding-top: 110px;
   }
   
+  .page-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .span-2 {
+    grid-column: span 1;
+  }
+  
+  .scroll-down-indicator {
+    grid-column: span 1;
+  }
+  
   .hero-container {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1417,23 +1429,17 @@ textarea.form-control {
 }
 
 @media (max-width: 768px) {
-  .page-section {
-    grid-template-columns: 1fr;
-  }
-  .span-2 {
-    grid-column: span 1;
-  }
   .bento-card {
     padding: 24px;
-  }
-  .hero-container {
-    grid-column: span 1;
   }
   .section-bg-icon {
     font-size: clamp(150px, 45vw, 260px);
     right: -3%;
     bottom: -8%;
     color: rgba(168, 85, 247, 0.08); /* Make watermark icon slightly more visible on mobile */
+  }
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 3.5rem);
   }
 }
 
@@ -1455,5 +1461,11 @@ textarea.form-control {
   }
   .contact-detail-item .detail-value {
     font-size: 13.5px;
+  }
+  .bento-card {
+    padding: 20px;
+  }
+  .title-sm {
+    font-size: 11px;
   }
 }
