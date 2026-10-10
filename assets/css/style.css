@@ -681,49 +681,6 @@ body.mobile-menu-open {
   font-weight: 300;
 }
 
-/* Section "Read More" button styling */
-.section-read-more-wrap {
-  margin-top: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.section-read-more-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 22px;
-  background: rgba(168, 85, 247, 0.08);
-  border: 1px solid var(--accent-solid);
-  color: var(--text-main);
-  border-radius: 30px;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-  transition: var(--transition-smooth);
-  cursor: pointer;
-}
-
-.section-read-more-btn i {
-  font-size: 12px;
-  color: var(--accent-1);
-  transition: transform 0.3s ease;
-}
-
-.section-read-more-btn:hover {
-  background: var(--accent-solid);
-  color: var(--accent-contrast);
-  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.35);
-  transform: translateY(-2px);
-}
-
-.section-read-more-btn:hover i {
-  color: var(--accent-contrast);
-  transform: translateX(3px);
-}
-
 /* Projects elements styling */
 .project-card {
   display: flex;
