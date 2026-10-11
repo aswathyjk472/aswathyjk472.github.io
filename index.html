@@ -7,6 +7,75 @@
   <title>Aswathy Jayakrishnan | AI Engineer</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* AI widget & nav icon */
+    .nav-ai-btn { background: transparent; border: none; color: var(--text-main); font-size: 16px; cursor: pointer; padding: 6px 10px; display: inline-flex; align-items:center; gap:6px; }
+    .nav-ai-btn i { font-size: 18px; color: var(--accent-1); }
+    .nav-actions { margin-left: auto; display:flex; gap:10px; align-items:center; }
+
+    /* Dark-mode friendly widget appearance */
+    .ai-widget {
+      position: fixed;
+      right: 24px;
+      top: 18%;
+      width: 340px;
+      max-width: calc(100% - 48px);
+      height: 420px;
+      background: linear-gradient(180deg, rgba(8,7,13,0.95), rgba(12,10,18,0.98));
+      color: #e6e6ee;
+      border: 1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 10px 40px rgba(2,6,23,0.6);
+      border-radius: 12px;
+      overflow: hidden;
+      z-index: 9999;
+      transform: translateX(12px);
+      opacity:0;
+      transition: all 220ms ease;
+      pointer-events: none;
+      display:flex;
+      flex-direction:column;
+      backdrop-filter: blur(6px);
+    }
+    .ai-widget.open { transform: translateX(0); opacity:1; pointer-events:auto; }
+
+    .ai-widget-header {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 12px;
+      border-bottom:1px solid rgba(255,255,255,0.03);
+      background: linear-gradient(90deg, rgba(168,85,247,0.03), rgba(58,140,255,0.02));
+      color: #e6e6ee;
+    }
+    .ai-widget-title { font-weight:600; font-size:14px; color: #f3f3f7; display:flex; gap:8px; align-items:center;}
+    .ai-widget-title i { color: var(--accent-1); }
+    .ai-widget-close { background:transparent; border:none; font-size:14px; cursor:pointer; color:rgba(230,230,238,0.8); }
+
+    .ai-widget-body { padding:12px; overflow:auto; flex:1; background:transparent; }
+    .ai-widget-footer { padding:8px; border-top:1px solid rgba(255,255,255,0.02); display:flex; gap:8px; align-items:center; }
+
+    .ai-widget .assistant-chat-window { max-height: calc(100% - 44px); overflow:auto; padding-right:6px; }
+
+    /* Chat message layout and bubbles */
+    .assistant-message { display:flex; gap:10px; margin-bottom:12px; align-items:flex-start; }
+    .assistant-avatar { width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; background: rgba(255,255,255,0.02); color: var(--accent-1); flex:0 0 34px; }
+    .assistant-message .assistant-bubble { padding:10px 14px; border-radius:12px; max-width:100%; line-height:1.45; color: #dcdce8; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.02); }
+
+    /* User bubble (right aligned) */
+    .assistant-message-user { justify-content:flex-end; }
+    .assistant-message-user .assistant-bubble { background: linear-gradient(90deg, #6b46c1, #3a8cff); color: #fff; border: none; border-radius: 18px; }
+
+    /* Bot bubble */
+    .assistant-message-bot .assistant-bubble { background: rgba(255,255,255,0.02); color: #e6e6ee; }
+
+    /* Input styling */
+    .ai-widget-footer input[type="text"] { flex:1; border-radius:20px; padding:8px 12px; border:1px solid rgba(255,255,255,0.04); background: rgba(255,255,255,0.02); color:#eee; outline:none; }
+    .ai-widget-footer input::placeholder { color: rgba(230,230,238,0.5); }
+    .ai-widget-footer .btn-secondary { padding:8px 12px; border-radius:20px; }
+
+    @media (max-width:600px){ .ai-widget{ right:12px; left:12px; top:auto; bottom:16px; width:auto; height:360px;} }
+
+  </style>
 </head>
 
 <body>
@@ -25,7 +94,10 @@
       <a href="#publications">Publications</a>
       <a href="#achievements">Achievements</a>
     </div>
-    <a href="#contact" class="nav-contact-btn contact-trigger">Let's connect</a>
+    <div class="nav-actions">
+      <button id="ai-toggle-btn" class="nav-ai-btn" aria-label="Open AI Assistant" title="Open AI Assistant"><i class="fas fa-robot"></i></button>
+      <a href="#contact" class="nav-contact-btn contact-trigger">Let's connect</a>
+    </div>
     <button class="mobile-menu-toggle" aria-label="Toggle Menu">
       <span class="hamburger-bar"></span>
       <span class="hamburger-bar"></span>
@@ -77,6 +149,18 @@
         <div class="section-heading span-2">
           <span class="section-heading-index">01</span>
           <h2 class="section-heading-title grad-word">About Me</h2>
+        </div>
+        <div class="about-photo-showcase span-2">
+          <div class="about-photo-flip">
+            <div class="about-photo-flip-inner">
+              <div class="about-photo-face about-photo-front">
+                <img src="profilephoto.jpeg" alt="Aswathy Jayakrishnan">
+              </div>
+              <div class="about-photo-face about-photo-back">
+                <img src="profilephoto.jpeg" alt="Aswathy Jayakrishnan">
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- LEFT COLUMN: RESEARCH INTERESTS & CAREER VISION -->
@@ -139,22 +223,17 @@
         <!-- RIGHT COLUMN: ABOUT ME -->
         <div class="about-right-col">
           <div class="bento-card">
-            <div class="about-profile-row">
-              <div class="about-profile-photo">
-                <img src="profilephoto.jpeg" alt="Aswathy Jayakrishnan">
-              </div>
-              <div class="about-text" style="display: flex; flex-direction: column; gap: 14px;">
-                <p>I am <strong>Aswathy Jayakrishnan</strong>, an Assistant Professor and AI Research Engineer
-                  specializing in Artificial Intelligence, Machine Learning, Computer Vision, Medical AI, and Natural
-                  Language Processing. My work focuses on developing intelligent systems that bridge cutting-edge research
-                  and real-world applications, with an emphasis on explainable, trustworthy, and deployable AI solutions.
-                </p>
-                <p>Currently, I serve as an Assistant Professor at Adi Shankara Institute of Engineering and Technology,
-                  where I teach Computer Networks and Artificial Intelligence Laboratory courses while mentoring future
-                  engineers. My research includes Diabetic Retinopathy grading using hybrid deep learning frameworks,
-                  Facial Expression Recognition, NLP-based Question Answering systems, and Healthcare AI. I am passionate
-                  about advancing AI through research, innovation, teaching, and academic collaboration.</p>
-              </div>
+            <div class="about-text" style="display: flex; flex-direction: column; gap: 14px;">
+              <p>I am <strong>Aswathy Jayakrishnan</strong>, an Assistant Professor and AI Research Engineer
+                specializing in Artificial Intelligence, Machine Learning, Computer Vision, Medical AI, and Natural
+                Language Processing. My work focuses on developing intelligent systems that bridge cutting-edge research
+                and real-world applications, with an emphasis on explainable, trustworthy, and deployable AI solutions.
+              </p>
+              <p>Currently, I serve as an Assistant Professor at Adi Shankara Institute of Engineering and Technology,
+                where I teach Computer Networks and Artificial Intelligence Laboratory courses while mentoring future
+                engineers. My research includes Diabetic Retinopathy grading using hybrid deep learning frameworks,
+                Facial Expression Recognition, NLP-based Question Answering systems, and Healthcare AI. I am passionate
+                about advancing AI through research, innovation, teaching, and academic collaboration.</p>
             </div>
           </div>
         </div>
@@ -681,10 +760,11 @@
         <div class="section-bg-icon"><i class="fas fa-award"></i></div>
       </section>
 
+
       <!-- ====== CONTACT PAGE ====== -->
       <section class="page-section" id="contact">
         <div class="section-heading span-2">
-          <span class="section-heading-index">08</span>
+          <span class="section-heading-index">09</span>
           <h2 class="section-heading-title grad-word">Contact Me</h2>
         </div>
         <div class="bento-card span-2">
@@ -735,6 +815,39 @@
       </section>
 
     </main>
+  </div>
+
+  <!-- AI floating widget -->
+  <div class="ai-widget" id="ai-widget" aria-hidden="true" role="dialog" aria-label="AI Assistant Chat">
+    <div class="ai-widget-header">
+      <div class="ai-widget-title"><i class="fas fa-robot"></i><span style="font-size:13px;">Assistant</span></div>
+      <div>
+        <button id="ai-minimize-btn" class="ai-widget-close" aria-label="Minimize assistant">_</button>
+        <button id="ai-close-btn" class="ai-widget-close" aria-label="Close assistant">&times;</button>
+      </div>
+    </div>
+    <div class="ai-widget-body">
+      <!-- Reuse assistant chat window content -->
+      <div class="assistant-chat-window" aria-live="polite">
+        <div class="assistant-message assistant-message-bot">
+          <span class="assistant-avatar"><i class="fas fa-sparkles"></i></span>
+          <div class="assistant-bubble">
+            Hi! I'm Aswathy's portfolio assistant. Click any question on the left to learn more.
+          </div>
+        </div>
+        <div class="assistant-message assistant-message-user">
+          <span class="assistant-avatar"><i class="fas fa-user"></i></span>
+          <div class="assistant-bubble" id="ai-widget-question-output">Who are you?</div>
+        </div>
+        <div class="assistant-message assistant-message-bot">
+          <span class="assistant-avatar"><i class="fas fa-robot"></i></span>
+          <div class="assistant-bubble assistant-bubble-answer" id="ai-widget-answer-output">
+            I am Aswathy Jayakrishnan, an Assistant Professor and AI &amp; ML Engineer specializing in Computer
+            Vision, Medical AI, Natural Language Processing, and research-driven intelligent systems.
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -868,6 +981,52 @@
       startSlideShow();
     }
 
+    // Portfolio AI Assistant
+    const assistantReplies = {
+      intro: {
+        question: 'Who are you?',
+        answer: `I am Aswathy Jayakrishnan, an Assistant Professor and AI & ML Engineer specializing in Computer Vision, Medical AI, Natural Language Processing, and research-driven intelligent systems.`
+      },
+      research: {
+        question: 'What are your research interests?',
+        answer: `My research interests include Artificial Intelligence, Machine Learning, Computer Vision, Medical Imaging, Explainable AI, Deep Learning, Transformers, Natural Language Processing, and multimodal AI systems for real-world impact.`
+      },
+      projects: {
+        question: 'Tell me about your projects',
+        answer: `My portfolio features projects such as Health Mind AI, an AI-powered health surveillance platform, an ensembled explainable diabetic retinopathy detection model, and VideoQuest, a question-answering system for YouTube content using NLP.`
+      },
+      certifications: {
+        question: 'What certifications do you have?',
+        answer: `I have certifications from NPTEL, Coursera, and Google Cloud, including Introduction to Large Language Models, Generative AI for UX Designers, and Intro to Generative AI Learning Path.`
+      },
+      contact: {
+        question: 'How can I contact you?',
+        answer: `You can reach me by email at aswathyjayakrishnan2@gmail.com, by phone at +91 9645029641, or from Ernakulam, Kerala, India. You can also use the Connect button in the Contact section.`
+      }
+    };
+
+    const assistantButtons = document.querySelectorAll('[data-assistant-question]');
+    const assistantQuestionOutput = document.getElementById('assistant-question-output');
+    const assistantAnswerOutput = document.getElementById('assistant-answer-output');
+
+    function updateAssistantResponse(key) {
+      const selectedReply = assistantReplies[key];
+      if (!selectedReply || !assistantQuestionOutput || !assistantAnswerOutput) return;
+
+      assistantQuestionOutput.textContent = selectedReply.question;
+      assistantAnswerOutput.textContent = selectedReply.answer;
+
+      assistantButtons.forEach((button) => {
+        button.classList.toggle('active', button.dataset.assistantQuestion === key);
+      });
+    }
+
+    assistantButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        updateAssistantResponse(button.dataset.assistantQuestion);
+      });
+    });
+
     // Connection Dots Particle Animation
     const canvas = document.getElementById('portfolio-dots-canvas');
     if (canvas) {
@@ -964,6 +1123,243 @@
         e.preventDefault();
       }
     });
+
+    // AI widget toggle logic
+    const aiToggleBtn = document.getElementById('ai-toggle-btn');
+    const aiWidget = document.getElementById('ai-widget');
+    const aiCloseBtn = document.getElementById('ai-close-btn');
+    const aiMinimizeBtn = document.getElementById('ai-minimize-btn');
+    const aiWidgetQuestion = document.getElementById('ai-widget-question-output');
+    const aiWidgetAnswer = document.getElementById('ai-widget-answer-output');
+
+    function openAiWidget() {
+      if (aiWidget) {
+        aiWidget.classList.add('open');
+        aiWidget.setAttribute('aria-hidden','false');
+      }
+    }
+    function closeAiWidget() {
+      if (aiWidget) {
+        aiWidget.classList.remove('open');
+        aiWidget.setAttribute('aria-hidden','true');
+      }
+    }
+
+    if (aiToggleBtn) {
+      aiToggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (aiWidget && aiWidget.classList.contains('open')) {
+          closeAiWidget();
+        } else {
+          openAiWidget();
+        }
+      });
+    }
+    if (aiCloseBtn) aiCloseBtn.addEventListener('click', closeAiWidget);
+    if (aiMinimizeBtn) aiMinimizeBtn.addEventListener('click', () => {
+      // minimize just hides the widget (same as close for now)
+      closeAiWidget();
+    });
+
+    // Mirror assistant responses into widget when left-side chips are clicked
+    assistantButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const key = button.dataset.assistantQuestion;
+        const selectedReply = assistantReplies[key];
+        if (selectedReply) {
+          if (aiWidgetQuestion) aiWidgetQuestion.textContent = selectedReply.question;
+          if (aiWidgetAnswer) aiWidgetAnswer.textContent = selectedReply.answer;
+          openAiWidget();
+        }
+      });
+    });
+
+    // Create a lightweight input footer for the widget (dynamically to avoid heavy markup edits)
+    (function attachAiFooter(){
+      if (!aiWidget) return;
+      const footer = document.createElement('div');
+      footer.className = 'ai-widget-footer';
+      footer.innerHTML = `<input id="ai-input" type="text" placeholder="Ask about my work..." style="flex:1; border-radius:20px; padding:8px 12px; border:1px solid rgba(255,255,255,0.06); background:transparent; color: #eee;"><button id="ai-send-btn" class="btn-secondary" style="padding:8px 12px; border-radius:20px; background: linear-gradient(90deg,#6b46c1,#3a8cff); color:#fff; border:none;">Send</button>`;
+      aiWidget.appendChild(footer);
+
+      const aiInput = document.getElementById('ai-input');
+      const aiSendBtn = document.getElementById('ai-send-btn');
+      const messagesContainer = aiWidget.querySelector('.assistant-chat-window');
+
+      function appendMessage(who, text){
+        const wrapper = document.createElement('div');
+        wrapper.className = who === 'user' ? 'assistant-message assistant-message-user' : 'assistant-message assistant-message-bot';
+        const avatar = document.createElement('span');
+        avatar.className = 'assistant-avatar';
+        avatar.innerHTML = who === 'user' ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+        const bubble = document.createElement('div');
+        bubble.className = 'assistant-bubble';
+        bubble.textContent = text;
+        wrapper.appendChild(avatar);
+        wrapper.appendChild(bubble);
+        if (messagesContainer) messagesContainer.appendChild(wrapper);
+        if (messagesContainer) messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }
+
+      // Lightweight client-side QA model loader (transformers.js) - loads a small distilled QA model in-browser
+      let qaPipeline = null;
+      let modelLoading = false;
+      let modelReady = false;
+
+      async function loadClientModel(){
+        if (modelReady || modelLoading) return;
+        modelLoading = true;
+        appendMessage('bot', 'Loading a small on-device QA model (may take a few seconds)...');
+
+        // Dynamically load the Transformers.js runtime (uses WASM / WebGPU where available)
+        try {
+          if (!window.transformers) {
+            await new Promise((resolve, reject) => {
+              const s = document.createElement('script');
+              s.src = 'https://cdn.jsdelivr.net/npm/@xenova/transformers@2.5.0/dist/transformers.min.js';
+              s.onload = () => resolve();
+              s.onerror = () => reject(new Error('Transformers runtime failed to load'));
+              document.head.appendChild(s);
+              // Safety timeout
+              setTimeout(() => reject(new Error('Transformers runtime load timeout')), 20000);
+            });
+          }
+
+          // Attempt to initialize a small QA pipeline with a timeout
+          try {
+            const modelId = 'Xenova/distilbert-base-cased-distilled-squad';
+            const p = window.transformers.pipeline('question-answering', modelId);
+            qaPipeline = await Promise.race([
+              p,
+              new Promise((_, rej) => setTimeout(() => rej(new Error('Model load timeout')), 30000))
+            ]);
+
+            modelReady = true;
+            modelLoading = false;
+            appendMessage('bot', 'Model ready — ask your question.');
+            return;
+          } catch (err) {
+            console.warn('Model init failed, falling back to local extraction', err);
+            modelReady = false;
+            modelLoading = false;
+            appendMessage('bot', 'Using local text-extraction for answers (no in-browser model).');
+            return;
+          }
+        } catch (err) {
+          console.warn('Transformers runtime failed to load, using fallback', err);
+          modelReady = false;
+          modelLoading = false;
+          appendMessage('bot', 'Using local text-extraction for answers (no in-browser model).');
+          return;
+        }
+      }
+
+      async function answerQuestion(question){
+        // Build a list of short passages (by section and paragraph) from portfolio to improve retrieval
+        function getPortfolioPassages(){
+          const ids = ['home','about','education','experience','certifications','projects','publications','achievements','contact'];
+          const passages = [];
+          ids.forEach(id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const title = (el.querySelector('.section-heading-title') ? el.querySelector('.section-heading-title').innerText : id);
+            // split by paragraph-like breaks
+            const raw = el.innerText || '';
+            const parts = raw.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
+            parts.forEach(p => passages.push({ id, title, text: p }));
+          });
+          // if none, fallback to main content split into sentences
+          if (passages.length === 0){
+            const main = document.querySelector('.main-content');
+            if (main){
+              const parts = (main.innerText||'').split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean);
+              parts.forEach((p,i) => passages.push({ id: 'main', title: 'Main', text: p }));
+            }
+          }
+          return passages;
+        }
+
+        function tokenize(s){ return (s||'').toLowerCase().match(/\w+/g) || []; }
+
+        const passages = getPortfolioPassages();
+        const qTerms = tokenize(question);
+
+        // Score passages by overlap with query terms and title matches
+        const scored = passages.map(p => {
+          const pTerms = tokenize(p.text);
+          const termSet = new Set(pTerms);
+          let score = 0;
+          qTerms.forEach(t => { if (termSet.has(t)) score += 1; });
+          // bonus if title contains a query term
+          const titleTerms = tokenize(p.title);
+          for (const t of qTerms){ if (titleTerms.includes(t)) score += 2; }
+          // normalize by passage length to prefer concise matches
+          const norm = Math.sqrt(pTerms.length) || 1;
+          return { p, score: score / norm };
+        }).filter(x => x.score > 0);
+
+        scored.sort((a,b) => b.score - a.score);
+
+        // If model is available, run it on the top passages concatenated for better context
+        if (modelReady && qaPipeline){
+          try {
+            const topContexts = scored.slice(0,4).map(x => `SECTION:${x.p.id.toUpperCase()}\n${x.p.text}`).join('\n\n');
+            const context = (topContexts && topContexts.length > 0) ? topContexts : passages.slice(0,4).map(p=>p.text).join('\n\n');
+            const res = await qaPipeline({ question, context });
+            if (res){
+              const answer = res.answer || (Array.isArray(res) && res[0] && res[0].answer) || null;
+              if (answer) return answer;
+            }
+          } catch (err){
+            console.error('QA pipeline error', err);
+          }
+        }
+
+        // No model or model failed: return the most relevant passage(s) as answer (concise)
+        if (scored.length > 0){
+          const top = scored[0].p.text;
+          // try to return up to two sentences from the passage
+          const sentences = top.split(/(?<=[\.\!\?])\s+/);
+          return sentences.slice(0,2).join(' ');
+        }
+
+        // final fallback: keyword match against assistantReplies
+        const q = question.toLowerCase();
+        for (const key in assistantReplies){
+          const r = assistantReplies[key];
+          if (r.question.toLowerCase().includes(q) || q.includes(key) || q.split(' ').some(w => r.answer.toLowerCase().includes(w))){
+            return r.answer;
+          }
+        }
+
+        return "I couldn't find a direct answer in the portfolio content. Try asking about sections like 'education', 'projects', or 'experience'.";
+      }
+
+      // Kick off model load lazily when user first focuses the input
+      aiInput.addEventListener('focus', () => { loadClientModel(); });
+
+      aiSendBtn.addEventListener('click', async () => {
+        const q = aiInput.value && aiInput.value.trim();
+        if (!q) return;
+        appendMessage('user', q);
+        aiInput.value = '';
+        appendMessage('bot', 'Thinking...');
+        // remove last 'Thinking...' then append real answer
+        const answer = await answerQuestion(q);
+        // remove the last bot 'Thinking...' bubble
+        const bubbles = messagesContainer.querySelectorAll('.assistant-message-bot .assistant-bubble');
+        if (bubbles && bubbles.length) {
+          const lastBubble = bubbles[bubbles.length-1];
+          if (lastBubble.textContent === 'Thinking...') lastBubble.textContent = answer;
+          else appendMessage('bot', answer);
+        } else {
+          appendMessage('bot', answer);
+        }
+      });
+
+      // allow enter key to send
+      aiInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); aiSendBtn.click(); } });
+    })();
   </script>
 </body>
 
