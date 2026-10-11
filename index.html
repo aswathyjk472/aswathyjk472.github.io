@@ -38,41 +38,31 @@
     <main class="main-content" id="cards">
 
       <!-- ====== HOME PAGE (HERO) ====== -->
-      <section class="page-section active" id="home">
-        <div class="hero-container">
-          <div class="hero-content">
-            <h3 class="hero-subtitle">Hi, I'm <span class="highlight-name">Aswathy Jayakrishnan</span></h3>
-            <h1 class="hero-title">AI & ML Engineer</h1>
-            <p class="hero-desc">
-              Specializing in Computer Vision and NLP, focused on transforming deep learning research into
-              high-performance, real-world applications.
-            </p>
+      <section class="page-section active hero-section" id="home">
+        <div class="hero-content-wrap">
+          <p class="hero-eyebrow">Hi, I'm <span class="highlight-name">Aswathy Jayakrishnan</span></p>
+          <h1 class="hero-main-title">Welcome to <span class="grad-word">My Portfolio</span></h1>
+          <p class="hero-role">AI &amp; ML Engineer &bull; Computer Vision &amp; NLP Specialist</p>
+          <p class="hero-desc">
+            Specializing in Computer Vision and NLP, focused on transforming deep learning research into
+            high-performance, real-world applications.
+          </p>
 
-            <div class="hero-find-me">
-              <span class="find-me-label">Find Me on</span>
-              <div class="find-me-socials">
-                <a href="https://github.com/aswathyjk472" target="_blank" title="GitHub"><i
-                    class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/aswathyjk472" target="_blank" title="LinkedIn"><i
-                    class="fab fa-linkedin-in"></i></a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aswathyjayakrishnan2@gmail.com" target="_blank"
-                  title="Email"><i class="fas fa-envelope"></i></a>
-              </div>
-            </div>
-
-            <div class="hero-actions">
-              <a href="assets/resume.pdf" download class="btn-secondary">Resume <i class="fas fa-download"
-                  style="font-size: 12px; margin-left: 5px;"></i></a>
+          <div class="hero-find-me">
+            <span class="find-me-label">Find Me on</span>
+            <div class="find-me-socials">
+              <a href="https://github.com/aswathyjk472" target="_blank" title="GitHub"><i
+                  class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/aswathyjk472" target="_blank" title="LinkedIn"><i
+                  class="fab fa-linkedin-in"></i></a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aswathyjayakrishnan2@gmail.com" target="_blank"
+                title="Email"><i class="fas fa-envelope"></i></a>
             </div>
           </div>
 
-          <div class="hero-image-area">
-            <div class="hero-circle circle-bg-1"></div>
-            <div class="hero-circle circle-bg-2"></div>
-            <div class="hero-circle circle-bg-3"></div>
-            <div class="hero-profile-frame">
-              <img src="profilephoto.jpeg" alt="Aswathy Jayakrishnan">
-            </div>
+          <div class="hero-actions">
+            <a href="assets/resume.pdf" download class="btn-secondary">Resume <i class="fas fa-download"
+                style="font-size: 12px; margin-left: 5px;"></i></a>
           </div>
         </div>
         <div class="scroll-down-indicator">
@@ -84,6 +74,11 @@
 
       <!-- ====== ABOUT PAGE ====== -->
       <section class="page-section" id="about">
+        <div class="section-heading span-2">
+          <span class="section-heading-index">01</span>
+          <h2 class="section-heading-title grad-word">About Me</h2>
+        </div>
+
         <!-- LEFT COLUMN: RESEARCH INTERESTS & CAREER VISION -->
         <div class="about-left-col">
 
@@ -144,18 +139,22 @@
         <!-- RIGHT COLUMN: ABOUT ME -->
         <div class="about-right-col">
           <div class="bento-card">
-            <div class="title-sm"><i class="fas fa-user"></i> About Me</div>
-            <div class="about-text" style="display: flex; flex-direction: column; gap: 14px;">
-              <p>I am <strong>Aswathy Jayakrishnan</strong>, an Assistant Professor and AI Research Engineer
-                specializing in Artificial Intelligence, Machine Learning, Computer Vision, Medical AI, and Natural
-                Language Processing. My work focuses on developing intelligent systems that bridge cutting-edge research
-                and real-world applications, with an emphasis on explainable, trustworthy, and deployable AI solutions.
-              </p>
-              <p>Currently, I serve as an Assistant Professor at Adi Shankara Institute of Engineering and Technology,
-                where I teach Computer Networks and Artificial Intelligence Laboratory courses while mentoring future
-                engineers. My research includes Diabetic Retinopathy grading using hybrid deep learning frameworks,
-                Facial Expression Recognition, NLP-based Question Answering systems, and Healthcare AI. I am passionate
-                about advancing AI through research, innovation, teaching, and academic collaboration.</p>
+            <div class="about-profile-row">
+              <div class="about-profile-photo">
+                <img src="profilephoto.jpeg" alt="Aswathy Jayakrishnan">
+              </div>
+              <div class="about-text" style="display: flex; flex-direction: column; gap: 14px;">
+                <p>I am <strong>Aswathy Jayakrishnan</strong>, an Assistant Professor and AI Research Engineer
+                  specializing in Artificial Intelligence, Machine Learning, Computer Vision, Medical AI, and Natural
+                  Language Processing. My work focuses on developing intelligent systems that bridge cutting-edge research
+                  and real-world applications, with an emphasis on explainable, trustworthy, and deployable AI solutions.
+                </p>
+                <p>Currently, I serve as an Assistant Professor at Adi Shankara Institute of Engineering and Technology,
+                  where I teach Computer Networks and Artificial Intelligence Laboratory courses while mentoring future
+                  engineers. My research includes Diabetic Retinopathy grading using hybrid deep learning frameworks,
+                  Facial Expression Recognition, NLP-based Question Answering systems, and Healthcare AI. I am passionate
+                  about advancing AI through research, innovation, teaching, and academic collaboration.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -239,8 +238,12 @@
 
       <!-- ====== EDUCATION PAGE ====== -->
       <section class="page-section" id="education">
+        <div class="section-heading span-2">
+          <span class="section-heading-index">02</span>
+          <h2 class="section-heading-title grad-word">Education</h2>
+        </div>
         <div class="bento-card span-2">
-          <div class="title-sm"><i class="fas fa-graduation-cap"></i> Education</div>
+          <div class="title-sm"><i class="fas fa-graduation-cap"></i> Academic Timeline</div>
 
           <div class="timeline-item">
             <div class="tl-date">2024-2026</div>
@@ -271,9 +274,13 @@
 
       <!-- ====== EXPERIENCE PAGE ====== -->
       <section class="page-section" id="experience">
+        <div class="section-heading span-2">
+          <span class="section-heading-index">03</span>
+          <h2 class="section-heading-title grad-word">Experience</h2>
+        </div>
         <!-- EXPERIENCE -->
         <div class="bento-card span-2">
-          <div class="title-sm"><i class="fas fa-briefcase"></i> Experience</div>
+          <div class="title-sm"><i class="fas fa-briefcase"></i> Career Timeline</div>
 
           <div class="timeline-item">
             <div class="tl-date">Jun 2026 - Present</div>
@@ -311,10 +318,14 @@
 
       <!-- ====== CERTIFICATIONS PAGE ====== -->
       <section class="page-section" id="certifications">
+        <div class="section-heading span-2">
+          <span class="section-heading-index">04</span>
+          <h2 class="section-heading-title grad-word">Certifications</h2>
+        </div>
 
         <!-- Featured Certifications Overview -->
         <div class="bento-card span-2">
-          <div class="title-sm"><i class="fas fa-award"></i> Certifications</div>
+          <div class="title-sm"><i class="fas fa-award"></i> Featured Credentials</div>
 
           <ul style="margin-left: 20px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 10px;">
             <li style="margin-bottom: 10px;">
@@ -354,11 +365,9 @@
 
       <!-- ====== PROJECTS PAGE ====== -->
       <section class="page-section" id="projects">
-        <!-- PROJECTS HEADER -->
-        <div class="bento-card span-2"
-          style="padding: 20px 30px; display: flex; align-items: center; justify-content: space-between;">
-          <div class="title-sm" style="margin: 0;"><i class="fas fa-code"></i> Projects</div>
-          <div style="color: var(--accent-1);"><i class="fas fa-arrow-down"></i></div>
+        <div class="section-heading span-2">
+          <span class="section-heading-index">05</span>
+          <h2 class="section-heading-title grad-word">Projects</h2>
         </div>
 
         <!-- PROJECT 1 -->
@@ -614,8 +623,12 @@
 
       <!-- ====== PUBLICATIONS PAGE ====== -->
       <section class="page-section" id="publications">
+        <div class="section-heading span-2">
+          <span class="section-heading-index">06</span>
+          <h2 class="section-heading-title grad-word">Publications</h2>
+        </div>
         <div class="bento-card span-2">
-          <div class="title-sm"><i class="fas fa-file-alt"></i> Publications</div>
+          <div class="title-sm"><i class="fas fa-file-alt"></i> Research Output</div>
           <div class="publication-card">
             <div class="pub-badge">
               <span class="pub-year">2026</span>
@@ -639,8 +652,12 @@
 
       <!-- ====== ACHIEVEMENTS PAGE ====== -->
       <section class="page-section" id="achievements">
+        <div class="section-heading span-2">
+          <span class="section-heading-index">07</span>
+          <h2 class="section-heading-title grad-word">Achievements</h2>
+        </div>
         <div class="bento-card span-2">
-          <div class="title-sm"><i class="fas fa-trophy"></i> Achievements</div>
+          <div class="title-sm"><i class="fas fa-trophy"></i> Honors &amp; Recognition</div>
           <a href="file:///C:/Users/aswat/Downloads/Introduction%20to%20Large%20Language%20Models%20(LLMs).pdf"
             target="_blank" style="text-decoration: none; color: inherit; display: block;">
             <div class="publication-card">
@@ -666,8 +683,12 @@
 
       <!-- ====== CONTACT PAGE ====== -->
       <section class="page-section" id="contact">
+        <div class="section-heading span-2">
+          <span class="section-heading-index">08</span>
+          <h2 class="section-heading-title grad-word">Contact Me</h2>
+        </div>
         <div class="bento-card span-2">
-          <div class="title-sm"><i class="fas fa-envelope"></i> Contact Me</div>
+          <div class="title-sm"><i class="fas fa-envelope"></i> Get In Touch</div>
           <div class="contact-layout">
             <div class="contact-info-panel">
               <h3 class="contact-info-title">Let's build something together</h3>
