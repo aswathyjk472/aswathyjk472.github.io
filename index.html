@@ -382,13 +382,33 @@
             </div>
           </div>
 
-          <!-- READ MORE EXPERIENCE BUTTON -->
+          <div id="experience-more" hidden>
+            <div class="timeline-item">
+              <div class="tl-date">Dec 2025 - Mar 2026</div>
+              <div class="tl-title">Teaching Assistant</div>
+              <div class="tl-desc">
+                <p style="margin-bottom: 10px;">Guided undergraduate engineering students in Python Programming, Data Structures, and Database Management Systems (DBMS). Conducted code review sessions and assisted faculty in laboratory examinations and coursework grading.</p>
+                <div class="skills-wrapper">
+                  <span class="skill-chip">Python Programming</span><span class="skill-chip">DBMS &amp; SQL</span>
+                  <span class="skill-chip">Data Structures</span><span class="skill-chip">Student Mentoring</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item" style="border-left-color:transparent; padding-bottom:0;">
+              <div class="tl-date">May 2023 - Jun 2023</div>
+              <div class="tl-title">AI / NLP Intern</div>
+              <div class="tl-desc">
+                <p style="margin-bottom: 10px;">Developed an NLP-based emotion detection system that classifies textual data (tweets) into multiple emotional categories using machine learning techniques. Implemented preprocessing, feature extraction (TF-IDF), and classification models for emotion prediction.</p>
+                <div class="skills-wrapper">
+                  <span class="skill-chip highlight">Natural Language Processing</span><span class="skill-chip highlight">Python</span>
+                  <span class="skill-chip highlight">TF-IDF</span><span class="skill-chip">Scikit-Learn</span><span class="skill-chip">Sentiment Analysis</span>
+                </div>
+                <a href="https://github.com/aswathyjk472/Tweet-Emotion-Recognition" target="_blank" rel="noopener noreferrer">View Tweet Emotion Recognition Project on GitHub</a>
+              </div>
+            </div>
+          </div>
           <div class="section-read-more-wrap">
-            <a href="experience.html" target="_blank" rel="noopener noreferrer" class="section-read-more-btn"
-              id="exp-read-more-btn">
-              <span>Read More Experience Details</span>
-              <i class="fas fa-arrow-up-right-from-square"></i>
-            </a>
+            <button type="button" class="section-read-more-btn" data-expand-toggle="experience-more" aria-expanded="false" aria-controls="experience-more"><span>Read More</span></button>
           </div>
         </div>
         <div class="section-bg-icon" style="display: flex; gap: 2vw; align-items: baseline;"><i
@@ -429,13 +449,17 @@
             </li>
           </ul>
 
-          <!-- READ MORE CERTIFICATIONS BUTTON -->
+          <div id="certifications-more" hidden>
+            <ul style="margin-left: 20px; color: var(--text-secondary); line-height: 1.8;">
+              <li><strong>Prompt Engineering</strong> — Infosys Springboard (Apr 2025)</li>
+              <li><strong>Training &amp; Internship in Python/AI</strong> — LCC Computer Education (Jun 2022)</li>
+              <li><strong>Introduction to Python</strong> — HCL GUVI (Verified)</li>
+              <li><strong>Introduction to Python &amp; Cybersecurity</strong> — DevTown (Verified)</li>
+              <li><strong>Introduction to Microsoft Excel</strong> — Coursera Project Network (Dec 2024)</li>
+            </ul>
+          </div>
           <div class="section-read-more-wrap">
-            <a href="certifications.html" target="_blank" rel="noopener noreferrer" class="section-read-more-btn"
-              id="cert-read-more-btn">
-              <span>Read More Certifications</span>
-              <i class="fas fa-arrow-up-right-from-square"></i>
-            </a>
+            <button type="button" class="section-read-more-btn" data-expand-toggle="certifications-more" aria-expanded="false" aria-controls="certifications-more"><span>Read More</span></button>
           </div>
         </div>
 
@@ -473,8 +497,8 @@
                 </div>
               </div>
             </div>
-            <div class="proj-desc"
-              style="-webkit-line-clamp: unset; line-clamp: unset; display: block; overflow: visible;">
+            <div class="proj-desc expandable-project" id="project-details-1" data-collapsed="true"
+              style="-webkit-line-clamp: unset; line-clamp: unset; display: block;">
               <p style="margin-bottom: 10px; line-height: 1.6;">A comprehensive health surveillance platform pushing the
                 boundaries of autonomous precision health. It integrates high-performance local AI to analyze everything
                 from chest X-rays to real-time gait kinematics — all running locally to ensure strict "Zero-Knowledge"
@@ -506,6 +530,7 @@
                 <div class="skill-chip">Zero Trust Security</div>
                 <div class="skill-chip">HL7 & FHIR Standards</div>
               </div>
+              <button type="button" class="section-read-more-btn project-read-more" data-expand-toggle="project-details-1" aria-expanded="false" aria-controls="project-details-1"><span>Read More</span></button>
             </div>
           </div>
         </div>
@@ -524,8 +549,8 @@
                 <span style="font-size: 13px; color: var(--accent-2); font-weight: 500;">Jan 2026 - May 2026</span>
               </div>
             </div>
-            <div class="proj-desc"
-              style="-webkit-line-clamp: unset; line-clamp: unset; display: block; overflow: visible;">
+            <div class="proj-desc expandable-project" id="project-details-2" data-collapsed="true"
+              style="-webkit-line-clamp: unset; line-clamp: unset; display: block;">
               <p style="margin-bottom: 10px; line-height: 1.6;">An advanced clinical-grade artificial intelligence
                 framework designed for high-confidence Diabetic Retinopathy (DR) detection and grading, achieving an 93%
                 base multi-class accuracy. By combining state-of-the-art dual-backbone representations with
@@ -566,6 +591,7 @@
                 <div class="skill-chip">Plotly</div>
                 <div class="skill-chip">Python</div>
               </div>
+              <button type="button" class="section-read-more-btn project-read-more" data-expand-toggle="project-details-2" aria-expanded="false" aria-controls="project-details-2"><span>Read More</span></button>
             </div>
           </div>
         </div>
@@ -582,8 +608,8 @@
                 </a>
               </div>
             </div>
-            <div class="proj-desc"
-              style="-webkit-line-clamp: unset; line-clamp: unset; display: block; overflow: visible;">
+            <div class="proj-desc expandable-project" id="project-details-3" data-collapsed="true"
+              style="-webkit-line-clamp: unset; line-clamp: unset; display: block;">
               <p style="margin-bottom: 10px; line-height: 1.6;">The Flask application features a system architecture
                 designed to enable smooth user interaction with YouTube video material by utilizing natural language
                 processing (NLP) capabilities.</p>
@@ -606,6 +632,7 @@
                 <div class="skill-chip">YouTube Data API</div>
                 <div class="skill-chip">HTML/CSS/JS</div>
               </div>
+              <button type="button" class="section-read-more-btn project-read-more" data-expand-toggle="project-details-3" aria-expanded="false" aria-controls="project-details-3"><span>Read More</span></button>
             </div>
           </div>
         </div>
@@ -622,8 +649,8 @@
                 </a>
               </div>
             </div>
-            <div class="proj-desc"
-              style="-webkit-line-clamp: unset; line-clamp: unset; display: block; overflow: visible;">
+            <div class="proj-desc expandable-project" id="project-details-4" data-collapsed="true"
+              style="-webkit-line-clamp: unset; line-clamp: unset; display: block;">
               <p style="margin-bottom: 10px; line-height: 1.6;">An end-to-end Deep Learning tracking system designed for
                 crowd management, monitoring occupancy limits by automatically counting people entering or exiting a
                 designated area based on a configured reference line.</p>
@@ -649,6 +676,7 @@
                 <div class="skill-chip">NumPy</div>
                 <div class="skill-chip">Centroid Tracker</div>
               </div>
+              <button type="button" class="section-read-more-btn project-read-more" data-expand-toggle="project-details-4" aria-expanded="false" aria-controls="project-details-4"><span>Read More</span></button>
             </div>
           </div>
         </div>
@@ -665,8 +693,8 @@
                 </a>
               </div>
             </div>
-            <div class="proj-desc"
-              style="-webkit-line-clamp: unset; line-clamp: unset; display: block; overflow: visible;">
+            <div class="proj-desc expandable-project" id="project-details-5" data-collapsed="true"
+              style="-webkit-line-clamp: unset; line-clamp: unset; display: block;">
               <p style="margin-bottom: 10px;">ExpressAI is a web application that leverages a hybrid deep learning model
                 to detect and classify human emotions from video input. It offers both real-time emotion detection using
                 a webcam feed and analysis of uploaded video files.</p>
@@ -694,6 +722,7 @@
                 <div class="skill-chip">HTML/CSS/JS</div>
                 <div class="skill-chip">PIL (Pillow)</div>
               </div>
+              <button type="button" class="section-read-more-btn project-read-more" data-expand-toggle="project-details-5" aria-expanded="false" aria-controls="project-details-5"><span>Read More</span></button>
             </div>
           </div>
         </div>
@@ -1024,6 +1053,27 @@
     assistantButtons.forEach((button) => {
       button.addEventListener('click', () => {
         updateAssistantResponse(button.dataset.assistantQuestion);
+      });
+    });
+
+    document.querySelectorAll('.project-read-more').forEach((button) => {
+      const projectCard = button.closest('.project-card');
+      if (projectCard) projectCard.append(button);
+    });
+
+    document.querySelectorAll('[data-expand-toggle]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const content = document.getElementById(button.getAttribute('aria-controls'));
+        if (!content) return;
+
+        const expanded = button.getAttribute('aria-expanded') !== 'true';
+        button.setAttribute('aria-expanded', String(expanded));
+        if (content.classList.contains('expandable-project')) {
+          content.classList.toggle('is-expanded', expanded);
+        } else {
+          content.hidden = !expanded;
+        }
+        button.querySelector('span').textContent = expanded ? 'Read Less' : 'Read More';
       });
     });
 
